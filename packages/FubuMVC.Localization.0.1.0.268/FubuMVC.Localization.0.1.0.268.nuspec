@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FubuMVC.Localization</id>
+    <version>0.1.0.268</version>
+    <title>FubuMVC.Localization</title>
+    <authors>Jeremy Miller,  et al.</authors>
+    <owners>Jeremy Miller,  et al.</owners>
+    <licenseUrl>https://github.com/DarthFubuMVC/fubumvc/raw/master/license.txt</licenseUrl>
+    <projectUrl>http://mvc.fubu-project.org/</projectUrl>
+    <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Quickly bootstrap FubuLocalization inside a FubuMVC application</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>fubumvc localization</tags>
+    <dependencies>
+      <dependency id="FubuMVC.Core" version="0.9.8.1267" />
+      <dependency id="FubuLocalization" version="0.9.5.104" />
+    </dependencies>
+  </metadata>
+</package>

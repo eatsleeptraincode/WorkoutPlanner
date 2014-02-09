@@ -1,0 +1,20 @@
+<viewdata model="WorkoutPlanner.Web.Exercises.ListExerciseViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <Link model="WorkoutPlanner.Web.Exercises.CreateExerciseViewModel" text="Create Exercise"/>
+    <ul>
+        <li each="var e in Model.Exercises">
+            ${e.Name}
+        </li>
+    </ul>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>

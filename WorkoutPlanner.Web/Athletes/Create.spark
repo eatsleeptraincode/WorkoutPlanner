@@ -1,0 +1,22 @@
+<viewdata model="WorkoutPlanner.Web.Athletes.CreateAthleteViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <Form model="WorkoutPlanner.Web.Athletes.CreateAthleteViewModel">
+        <Edit name="FirstName"/>
+        <Edit name="LastName"/>
+        <Edit name="PhoneNumber"/>
+        <Edit name="Email"/>
+        <Edit name="BirthDate"/>
+        <input type="submit" text="Create"/>
+    </Form>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>

@@ -1,0 +1,9 @@
+﻿<test if="this.Get<FubuMVC.Core.Security.ISecurityContext>().IsAuthenticated()">
+    <li>
+        <Link model="FubuMVC.Authentication.LogoutRequest" text="Sign Out"/>
+    </li>
+<else/>
+    <li>
+        <Link model="FubuMVC.Authentication.LoginRequest" text="Sign In"/>
+    </li>
+</test>

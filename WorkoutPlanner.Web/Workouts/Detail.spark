@@ -1,0 +1,50 @@
+<viewdata model="WorkoutPlanner.Web.Workouts.DetailWorkoutViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
+
+    <Form model="WorkoutPlanner.Web.Workouts.AddExerciseViewModel">
+        <Input name="WorkoutId"/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr each="var e in Model.Workout.Exercises">
+                <td>${e.Name}</td>
+                <td>${e.Sets}</td>
+                <td>${e.Reps}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <Input name="Exercise"/>
+                </td>
+                <td>
+                    <Input name="Sets"/>
+                </td>
+                <td>
+                    <Input name="Reps"/>
+                </td>
+                <td>
+                    <input type="submit" value="Add"></input>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </Form>
+</content:main>
+
+<content:footer>
+
+</content:footer>

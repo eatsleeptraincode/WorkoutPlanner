@@ -1,0 +1,21 @@
+<viewdata model="WorkoutPlanner.Web.Athletes.ListAthleteViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <h2>Athletes</h2>
+    <Link model="WorkoutPlanner.Web.Athletes.CreateAthleteViewModel" text="Create"/>
+    <ul>
+        <li each="var a in Model.Athletes">
+            ${this.LinkTo(new WorkoutPlanner.Web.Athletes.DetailAthleteViewModel{AthleteId = a.Id}).Text(a.FirstName + " " + a.LastName)}
+        </li>
+    </ul>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>

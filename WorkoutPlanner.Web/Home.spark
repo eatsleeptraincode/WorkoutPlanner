@@ -1,0 +1,14 @@
+<viewdata model="WorkoutPlanner.Web.HomeModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+<h4>Welcome to the Workout Tracker</h4>
+</content:main>
+
+<content:footer>
+
+</content:footer>

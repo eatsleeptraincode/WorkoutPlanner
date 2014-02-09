@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FubuMVC.AntiForgery</id>
+    <version>0.9.0.262</version>
+    <title>FubuMVC.AntiForgery</title>
+    <authors>Jeremy D. Miller,  Josh Arnold</authors>
+    <owners>Jeremy D. Miller,  Josh Arnold</owners>
+    <licenseUrl>https://github.com/DarthFubuMVC/fubumvc/raw/master/license.txt</licenseUrl>
+    <projectUrl>http://mvc.fubu-project.org/</projectUrl>
+    <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Anti-Forgery protection for FubuMVC applications</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>web framework specification fubumvc</tags>
+    <dependencies>
+      <dependency id="FubuMVC.Core" version="0.9.9.1400" />
+      <dependency id="FubuMVC.Core.View" version="0.9.9.119" />
+      <dependency id="FubuMVC.Core.UI" version="0.9.9.138" />
+    </dependencies>
+  </metadata>
+</package>

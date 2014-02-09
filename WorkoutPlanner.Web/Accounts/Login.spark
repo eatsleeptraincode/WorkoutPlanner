@@ -1,0 +1,20 @@
+<viewdata model="FubuMVC.Authentication.LoginRequest" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <Form model="FubuMVC.Authentication.LoginRequest">
+        <Edit name="UserName"/>
+        <Edit name="Password"/>
+        <Edit name="RememberMe"/>
+        <input type="submit" text="Login"/>
+    </Form>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>

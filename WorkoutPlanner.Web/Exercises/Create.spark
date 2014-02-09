@@ -1,0 +1,18 @@
+<viewdata model="WorkoutPlanner.Web.Exercises.CreateExerciseViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <Form model="WorkoutPlanner.Web.Exercises.CreateExerciseViewModel">
+        <Edit name="Name"/>
+        <input type="submit" text="Create"/>
+    </Form>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>
