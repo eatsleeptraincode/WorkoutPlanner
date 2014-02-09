@@ -9,7 +9,7 @@ namespace WorkoutPlanner.Web
 	    {
             return FubuApplication
                 .For<WorkoutPlannerFubuRegistry>()
-				.StructureMap<WorkoutPlannerRegistry>();
+				.StructureMapObjectFactory(c => c.AddRegistry<WorkoutPlannerRegistry>());
 	    }
 	}
 }

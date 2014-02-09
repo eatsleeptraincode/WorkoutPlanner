@@ -2,6 +2,7 @@ using Bottles;
 using FubuMVC.Core;
 using FubuMVC.PersistedMembership;
 using FubuPersistence.RavenDb;
+using WorkoutPlanner.Web.Html;
 
 namespace WorkoutPlanner.Web
 {
