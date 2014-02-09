@@ -13,6 +13,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Exercise</th>
                 <th>Sets</th>
                 <th>Reps</th>
@@ -21,12 +22,16 @@
         </thead>
         <tbody>
             <tr each="var e in Model.Workout.Exercises">
+                <td>${e.Group}</td>
                 <td>${e.Name}</td>
                 <td>${e.Sets}</td>
                 <td>${e.Reps}</td>
                 <td></td>
             </tr>
             <tr>
+                <td>
+                    <Input name="Group"/>
+                </td>
                 <td>
                     <Input name="Exercise"/>
                 </td>

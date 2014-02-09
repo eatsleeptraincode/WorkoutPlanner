@@ -179,6 +179,7 @@
     <Compile Include="ConfigureHtmlConventions.cs" />
     <Compile Include="ConnectionStringConfigurationAction.cs" />
     <Compile Include="DefaultUser.cs" />
+    <Compile Include="EnumBuilder.cs" />
     <Compile Include="Exercises\CreateExerciseEndpoint.cs" />
     <Compile Include="Exercises\Exercise.cs" />
     <Compile Include="Exercises\ListExerciseEndpoint.cs" />
