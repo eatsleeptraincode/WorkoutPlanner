@@ -16,18 +16,23 @@ namespace WorkoutPlanner.Web.Workouts
         public FubuContinuation post_workout_addexercise(AddExerciseViewModel request)
         {
             var workout = _repository.Find<Workout>(request.WorkoutId);
-            workout.Exercises.Add(new WorkoutExercise{ExerciseId = request.Exercise, Group = request.Group ,Sets = request.Sets, Reps = request.Reps});
+            workout.Exercises.Add(new WorkoutExercise
+            {
+                ExerciseId = request.Exercise,
+                Group = request.Group,
+                Sets = request.Sets,
+                Reps = request.Reps,
+                Down = request.Down,
+                Bottom = request.Bottom,
+                Up = request.Up,
+                Top = request.Top,
+            });
             return FubuContinuation.RedirectTo(new DetailWorkoutViewModel {WorkoutId = request.WorkoutId});
         }
     }
 
-    public class AddExerciseViewModel
+    public class AddExerciseViewModel : ExerciseViewModel
     {
-        public Guid WorkoutId { get; set; }
         public Guid Exercise { get; set; }
-        public string Name { get; set; }
-        public int Sets { get; set; }
-        public int Reps { get; set; }
-        public ExerciseGroup Group { get; set; }
     }
 }

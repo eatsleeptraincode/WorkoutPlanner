@@ -25,6 +25,10 @@ namespace WorkoutPlanner.Web.Workouts
         public string Name { get; set; }
         public int Sets { get; set; }
         public int Reps { get; set; }
+        public int Down { get; set; }
+        public int Bottom { get; set; }
+        public int Up { get; set; }
+        public int Top { get; set; }
     }
 
     public enum ExerciseGroup

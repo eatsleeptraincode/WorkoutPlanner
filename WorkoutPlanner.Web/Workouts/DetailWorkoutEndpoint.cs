@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using FubuMVC.AutoComplete;
-using FubuMVC.Core.Continuations;
 using FubuMVC.Core.Registration;
 using FubuPersistence;
 using Raven.Client;
@@ -67,26 +66,38 @@ namespace WorkoutPlanner.Web.Workouts
         public IEnumerable<LookupItem> Lookup(AutoCompleteQuery query)
         {
             var exercises = _session.Query<Exercise, ExerciseByName>()
-                .Search(e => e.Name, string.Format("*{0}*", query.term), escapeQueryOptions:EscapeQueryOptions.AllowAllWildcards, options:SearchOptions.And)
+                .Search(e => e.Name,
+                    string.Format("*{0}*", query.term),
+                    escapeQueryOptions: EscapeQueryOptions.AllowAllWildcards,
+                    options: SearchOptions.And)
                 .ToList();
-            return
-                exercises
-                    .Select(e => new LookupItem {label = e.Name, value = e.Id.ToString()});
-//            return
-//                _repository.All<Exercise>()
-//                    .Where(e => e.Name.StartsWith(query.term)).ToList()
-//                    .Select(e => new LookupItem { label = e.Name, value = e.Id.ToString() });
+
+            return exercises.Select(e => new LookupItem
+            {
+                label = e.Name,
+                value = e.Id.ToString()
+            });
         }
     }
 
-    public class DetailWorkoutViewModel
+    public class DetailWorkoutViewModel : ExerciseViewModel
     {
-        public Guid WorkoutId { get; set; }
         public Workout Workout { get; set; }
         public Exercise Exercise { get; set; }
-        public ExerciseGroup Group { get; set; }
+    }
+
+    public class ExerciseViewModel
+    {
+        public Guid WorkoutId { get; set; }
         public string Name { get; set; }
         public int Sets { get; set; }
         public int Reps { get; set; }
+        public ExerciseGroup Group { get; set; }
+
+        public int Down { get; set; }
+        public int Bottom { get; set; }
+        public int Up { get; set; }
+        public int Top { get; set; }
     }
+
 }

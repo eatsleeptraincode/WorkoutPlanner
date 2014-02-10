@@ -17,6 +17,7 @@
                 <th>Exercise</th>
                 <th>Sets</th>
                 <th>Reps</th>
+                <th>Tempo</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,11 +27,12 @@
                 <td>${e.Name}</td>
                 <td>${e.Sets}</td>
                 <td>${e.Reps}</td>
+                <td>${e.Down}/${e.Bottom}/${e.Up}/${e.Top}</td>
                 <td></td>
             </tr>
             <tr>
                 <td>
-                    <Input name="Group"/>
+                    ${this.InputFor(x => x.Group).AddClass("input-mini")}
                 </td>
                 <td>
                     <Input name="Exercise"/>
@@ -40,6 +42,9 @@
                 </td>
                 <td>
                     <Input name="Reps"/>
+                </td>
+                <td>
+                    ${this.InputFor(x => x.Down).AddClass("input-mini")}/${this.InputFor(x => x.Bottom).AddClass("input-mini")}/${this.InputFor(x => x.Up).AddClass("input-mini")}/${this.InputFor(x => x.Top).AddClass("input-mini")}
                 </td>
                 <td>
                     <input type="submit" value="Add"></input>
