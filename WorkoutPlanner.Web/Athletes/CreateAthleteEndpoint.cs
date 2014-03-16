@@ -40,6 +40,7 @@ namespace WorkoutPlanner.Web.Athletes
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
@@ -51,6 +52,7 @@ namespace WorkoutPlanner.Web.Athletes
         {
             Property(m => m.FirstName).Required();
             Property(m => m.LastName).Required();
+            Property(m => m.Gender).Required();
             Property(m => m.PhoneNumber).Required();
             Property(m => m.Email).Required();
             Property(m => m.BirthDate).Required();

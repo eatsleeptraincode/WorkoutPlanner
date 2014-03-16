@@ -8,12 +8,25 @@
 
     <h2>Athletes</h2>
     <Link model="WorkoutPlanner.Web.Athletes.CreateAthleteViewModel" text="Create"/>
-    <ul>
-        <li each="var a in Model.Athletes">
-            ${this.LinkTo(new WorkoutPlanner.Web.Athletes.DetailAthleteViewModel{AthleteId = a.Id}).Text(a.FirstName + " " + a.LastName)}
-        </li>
-    </ul>
-    
+    <table class ="table">
+        <theader>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+            </tr>
+
+            <tr each="var a in Model.Athletes" >
+                <td>${this.LinkTo(new DetailAthleteViewModel{AthleteId = a.Id}).Text(a.LastName + ", " + a.FirstName)}</td>
+                <td>${a.Gender}</td>
+                <td>${a.BirthDate}</td>
+                <td>${a.PhoneNumber}</td>
+                <td>${a.Email}</td>
+            </tr>
+        </theader>
+    </table>
 </content:main>
 
 <content:footer>

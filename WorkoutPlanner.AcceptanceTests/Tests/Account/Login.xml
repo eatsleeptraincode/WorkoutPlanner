@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Test name="Login" lifecycle="Acceptance">
+  <LoginScreen>
+    <OpenLoginScreen isStep="True" />
+    <Login isStep="True" user="admin" password="password" />
+    <ShouldBeOnTheHomePage isStep="True" />
+  </LoginScreen>
+</Test>

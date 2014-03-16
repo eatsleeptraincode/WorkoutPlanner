@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FubuMVC.Authentication.Serenity</id>
+    <version>0.1.0.381</version>
+    <title>FubuMVC.Authentication.Serenity</title>
+    <authors>Jeremy Miller,  Joshua Arnold</authors>
+    <owners>Jeremy Miller,  Joshua Arnold</owners>
+    <licenseUrl>https://github.com/DarthFubuMVC/fubumvc/raw/master/license.txt</licenseUrl>
+    <projectUrl>http://mvc.fubu-project.org/</projectUrl>
+    <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Reusable LoginScreenFixture for projects that use FubuMVC.Authentication</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>fubumvc authentication serenity</tags>
+    <dependencies>
+      <dependency id="FubuMVC.Authentication" version="0.1.0.69" />
+      <dependency id="Serenity" version="0.9.8.127" />
+    </dependencies>
+  </metadata>
+</package>

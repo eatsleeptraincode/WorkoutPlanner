@@ -9,6 +9,7 @@
     <Form model="WorkoutPlanner.Web.Athletes.CreateAthleteViewModel">
         <Edit name="FirstName"/>
         <Edit name="LastName"/>
+        <Edit name="Gender"/>
         <Edit name="PhoneNumber"/>
         <Edit name="Email"/>
         <Edit name="BirthDate"/>

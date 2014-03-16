@@ -1,13 +1,15 @@
 <viewdata model="WorkoutPlanner.Web.Workouts.DetailWorkoutViewModel" />
 
 <content:header>
+    <Asset src="workout"/>
 
 </content:header>
 
 <content:main>
 
     <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
-
+    ${this.LinkTo(new PrintWorkoutViewModel{WorkoutId = Model.Workout.Id}).Text("Print")}
+    
     <Form model="WorkoutPlanner.Web.Workouts.AddExerciseViewModel">
         <Input name="WorkoutId"/>
     <table class="table">
@@ -53,6 +55,12 @@
         </tbody>
     </table>
     </Form>
+
+
+
+    <div ng-controller="MyCtrl">
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+    </div>
 </content:main>
 
 <content:footer>

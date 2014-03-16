@@ -41,6 +41,9 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.2.0.0.576\lib\Bottles.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.1.2.0.272\lib\FubuCore.dll</HintPath>
     </Reference>
@@ -113,6 +116,9 @@
     <Reference Include="HtmlTags">
       <HintPath>..\packages\HtmlTags.2.0.0.181\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net45">
       <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.1\lib\net45\Microsoft.CompilerServices.AsyncTargetingPack.Net45.dll</HintPath>
     </Reference>
@@ -130,6 +136,9 @@
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage">
       <HintPath>..\packages\WindowsAzure.Storage.2.0.6.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Abstractions">
       <HintPath>..\packages\RavenDB.Database.2.5.2750\lib\net45\Raven.Abstractions.dll</HintPath>
@@ -167,6 +176,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\scripts\angular.min.js" />
+    <Content Include="content\scripts\ng-grid-2.0.7.debug.js" />
+    <Content Include="content\scripts\workout.js" />
+    <Content Include="content\styles\ng-grid.css" />
+    <Content Include="content\styles\workout.css" />
     <Content Include="Global.asax" />
     <Content Include="Shared\bindings.xml" />
     <Content Include="Web.config" />
@@ -175,6 +189,7 @@
     <Compile Include="Athletes\Athlete.cs" />
     <Compile Include="Athletes\CreateAthleteEndpoint.cs" />
     <Compile Include="Athletes\DetailAthleteEndpoint.cs" />
+    <Compile Include="Athletes\Gender.cs" />
     <Compile Include="Athletes\ListAthleteEndpoint.cs" />
     <Compile Include="ConnectionStringConfigurationAction.cs" />
     <Compile Include="DefaultUser.cs" />
@@ -190,6 +205,7 @@
     <Compile Include="Html\ConfigureHtmlConventions.cs" />
     <Compile Include="Html\EnumBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepPatterns\ListRepPatternEndpoint.cs" />
     <Compile Include="Templates\ListTemplateEndpoint.cs" />
     <Compile Include="WorkoutPlannerApplication.cs" />
     <Compile Include="WorkoutPlannerFubuRegistry.cs" />
@@ -197,6 +213,7 @@
     <Compile Include="Workouts\AddExerciseEndpoint.cs" />
     <Compile Include="Workouts\CreateWorkoutEndpoint.cs" />
     <Compile Include="Workouts\DetailWorkoutEndpoint.cs" />
+    <Compile Include="Workouts\PrintWorkoutEndpoint.cs" />
     <Compile Include="Workouts\Workout.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +222,9 @@
     <Content Include="Athletes\Create.spark">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Athletes\List.spark" />
+    <Content Include="Athletes\List.spark">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Exercises\Create.spark" />
     <Content Include="Exercises\List.spark" />
     <Content Include="Home.spark" />
@@ -218,6 +237,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\List.spark" />
+    <Content Include="main.asset.config" />
+    <Content Include="RepPatterns\List.spark" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,6 +249,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Workouts\Create.spark">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Workouts\Print.spark">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

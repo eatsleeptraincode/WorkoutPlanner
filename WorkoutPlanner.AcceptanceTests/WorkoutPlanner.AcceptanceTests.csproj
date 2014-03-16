@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{188739FF-EAAA-4BA3-95A8-DF232745B128}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkoutPlanner.AcceptanceTests</RootNamespace>
+    <AssemblyName>WorkoutPlanner.AcceptanceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bottles">
+      <HintPath>..\packages\Bottles.2.0.0.576\lib\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore">
+      <HintPath>..\packages\FubuCore.1.2.0.272\lib\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuLocalization.1.0.0.174\lib\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Ajax">
+      <HintPath>..\packages\FubuMVC.Ajax.0.1.0.468\lib\net40\FubuMVC.Ajax.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Authentication">
+      <HintPath>..\packages\FubuMVC.Authentication.0.1.0.381\lib\net40\FubuMVC.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Authentication.Serenity">
+      <HintPath>..\packages\FubuMVC.Authentication.Serenity.0.1.0.381\lib\net40\FubuMVC.Authentication.Serenity.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.AutoComplete">
+      <HintPath>..\packages\FubuMVC.AutoComplete.0.9.0.167\lib\net40\FubuMVC.AutoComplete.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.AutoComplete.Serenity">
+      <HintPath>..\packages\FubuMVC.AutoComplete.Serenity.0.9.0.167\lib\net40\FubuMVC.AutoComplete.Serenity.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.ContentExtensions">
+      <HintPath>..\packages\FubuMVC.ContentExtensions.0.1.0.277\lib\net40\FubuMVC.ContentExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\packages\FubuMVC.Core.1.2.0.1678\lib\net40\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core.Assets">
+      <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.560\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core.UI">
+      <HintPath>..\packages\FubuMVC.Core.UI.1.0.1.611\lib\net40\FubuMVC.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core.View">
+      <HintPath>..\packages\FubuMVC.Core.View.1.1.0.581\lib\net40\FubuMVC.Core.View.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.JQueryUI">
+      <HintPath>..\packages\FubuMVC.JQueryUI.0.5.0.342\lib\net40\FubuMVC.JQueryUI.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Katana, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuMVC.Katana.1.2.0.1678\lib\net40\FubuMVC.Katana.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.OwinHost">
+      <HintPath>..\packages\FubuMVC.OwinHost.1.2.0.1678\lib\net40\FubuMVC.OwinHost.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.StructureMap">
+      <HintPath>..\packages\FubuMVC.StructureMap.1.2.0.1678\lib\net40\FubuMVC.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Validation, Version=0.9.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuMVC.Validation.0.9.11.872\lib\FubuMVC.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Validation.Serenity">
+      <HintPath>..\packages\FubuMVC.Validation.Serenity.0.9.11.872\lib\FubuMVC.Validation.Serenity.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuPersistence, Version=0.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuPersistence.0.9.5.93\lib\net40\FubuPersistence.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuValidation">
+      <HintPath>..\packages\FubuValidation.0.9.11.872\lib\FubuValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags">
+      <HintPath>..\packages\HtmlTags.2.0.0.181\lib\4.0\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net45">
+      <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.1\lib\net45\Microsoft.CompilerServices.AsyncTargetingPack.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuMVC.Katana.1.2.0.1678\lib\net40\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuMVC.Katana.1.2.0.1678\lib\net40\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FubuMVC.Katana.1.2.0.1678\lib\net40\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.2.0.6.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Abstractions, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RavenDB.Database.2.5.2834-Unstable\lib\net45\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Embedded, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RavenDB.Embedded.2.5.2834-Unstable\lib\net45\Raven.Client.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RavenDB.Client.2.5.2834-Unstable\lib\net45\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Database, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RavenDB.Database.2.5.2834-Unstable\lib\net45\Raven.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\packages\Selenium.WebDriverBackedSelenium.2.31.2\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="Serenity">
+      <HintPath>..\packages\Serenity.0.9.9.219\lib\net40\Serenity.dll</HintPath>
+    </Reference>
+    <Reference Include="StoryTeller">
+      <HintPath>..\packages\Storyteller2.2.0.0.46\lib\net40\StoryTeller.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\packages\Selenium.RC.2.31.2\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriver.2.35.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.2.35.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fixtures\CreateAthletesFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutPlannerSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkoutPlanner.Web\WorkoutPlanner.Web.csproj">
+      <Project>{aa838d2a-acf8-4da4-a12a-279cfe386b26}</Project>
+      <Name>WorkoutPlanner.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\Account\Login.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Test name="Create Athlete" lifecycle="Acceptance">
+  <CreateAthletes>
+    <OpenCreateAthleteScreen isStep="True" />
+    <EnterFirstName isStep="True" FirstName="Ron" />
+    <EnterLastName isStep="True" LastName="Wobbler" />
+    <EnterBirthDate isStep="True" BirthDate="2000-12-12" />
+    <EnterEmail isStep="True" Email="ronw@example.org" />
+    <EnterPhoneNumber isStep="True" PhoneNumber="1234567890" />
+  </CreateAthletes>
+</Test>

@@ -1,0 +1,19 @@
+<viewdata model="WorkoutPlanner.Web.RepPatterns.ListRepPatternViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <h3>Rep Patterns</h3>
+    <ul>
+        <li>2,3,4,5</li>
+        <li>5,3,1</li>
+    </ul>
+    
+</content:main>
+
+<content:footer>
+
+</content:footer>

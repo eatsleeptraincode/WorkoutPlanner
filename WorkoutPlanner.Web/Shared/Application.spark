@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
     <head>
         <meta charset="utf-8"   />
         <Asset src="twitterbootstrap"/>
         <Asset src="jqueryuicss"/>
+        <Asset src="angulargrid"/>
         <use content="head" />
         <Styles />
     </head>
@@ -21,7 +22,10 @@
                                 <Link model="WorkoutPlanner.Web.Exercises.ListExerciseViewModel" text="Exercises"/>
                             </li>
                             <li>
-                                <Link model="WorkoutPlanner.Web.Templates.ListTemplateViewModel" text="Templates"/>
+                                <Link model="WorkoutPlanner.Web.Templates.ListTemplateViewModel" text="Workout Templates"/>
+                            </li>
+                            <li>
+                                <Link model="WorkoutPlanner.Web.RepPatterns.ListRepPatternViewModel" text="Rep Patterns"/>
                             </li>
                         <li class="divider-vertical"></li>
                         </test>

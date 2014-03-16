@@ -1,0 +1,40 @@
+<use master=""/>
+<viewdata model="WorkoutPlanner.Web.Workouts.PrintWorkoutViewModel" />
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"   />
+        <Asset src="twitterbootstrap"/>
+        <Asset src="jqueryuicss"/>
+        <Styles />
+    </head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+        <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Tempo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr each="var e in Model.Workout.Exercises">
+                    <td>${e.Group}</td>
+                    <td>${e.Name}</td>
+                    <td>${e.Sets}</td>
+                    <td>${e.Reps}</td>
+                    <td>${e.Down}/${e.Bottom}/${e.Up}/${e.Top}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
