@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using FubuMVC.AutoComplete;
 using FubuPersistence;
+using WorkoutPlanner.Web.Exercises;
 
 namespace WorkoutPlanner.Web.Workouts
 {

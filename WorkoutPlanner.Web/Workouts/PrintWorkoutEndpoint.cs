@@ -1,5 +1,6 @@
 ﻿using System;
 using FubuPersistence;
+using WorkoutPlanner.Web.Exercises;
 
 namespace WorkoutPlanner.Web.Workouts
 {
@@ -15,6 +16,10 @@ namespace WorkoutPlanner.Web.Workouts
         public PrintWorkoutViewModel get_workout_print_WorkoutId(PrintWorkoutViewModel request)
         {
             var workout = _repository.Find<Workout>(request.WorkoutId);
+            foreach (var exercise in workout.Exercises)
+            {
+                exercise.Name = _repository.Find<Exercise>(exercise.ExerciseId).Name;
+            }
             request.Workout = workout;
             return request;
         }

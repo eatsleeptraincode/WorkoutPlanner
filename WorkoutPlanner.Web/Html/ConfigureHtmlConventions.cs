@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using FubuMVC.Core.UI;
-using FubuMVC.Core.UI.Elements;
 using FubuMVC.TwitterBootstrap.Forms;
-using HtmlTags;
 using WorkoutPlanner.Web.Athletes;
 using WorkoutPlanner.Web.Workouts;
 

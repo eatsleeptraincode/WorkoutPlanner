@@ -22,6 +22,7 @@ namespace WorkoutPlanner.Web
         {
             _transaction.WithRepository(r =>
             {
+                
                 var user = r.FindWhere<User>(u => u.UserName == "admin");
                 if (user == null)
                 {

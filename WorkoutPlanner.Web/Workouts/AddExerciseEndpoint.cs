@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using FubuMVC.Core.Continuations;
 using FubuPersistence;
 
@@ -16,23 +18,37 @@ namespace WorkoutPlanner.Web.Workouts
         public FubuContinuation post_workout_addexercise(AddExerciseViewModel request)
         {
             var workout = _repository.Find<Workout>(request.WorkoutId);
-            workout.Exercises.Add(new WorkoutExercise
+            workout.Exercises = request.Exercises.Where(e => e.ExerciseId != Guid.Empty).Select(e => new WorkoutExercise
             {
-                ExerciseId = request.Exercise,
-                Group = request.Group,
-                Sets = request.Sets,
-                Reps = request.Reps,
-                Down = request.Down,
-                Bottom = request.Bottom,
-                Up = request.Up,
-                Top = request.Top,
-            });
+                Bottom = e.Bottom,
+                Down = e.Down,
+                ExerciseId = e.ExerciseId,
+                Group = e.Group,
+                Reps = e.Reps,
+                Sets = e.Sets,
+                Top = e.Top,
+                Up = e.Up
+            }).ToList();
             return FubuContinuation.RedirectTo(new DetailWorkoutViewModel {WorkoutId = request.WorkoutId});
         }
     }
 
     public class AddExerciseViewModel : ExerciseViewModel
     {
-        public Guid Exercise { get; set; }
+        public Guid WorkoutId { get; set; }
+        public IList<AddWorkoutExerciseViewModel> Exercises { get; set; }
+    }
+
+    public class AddWorkoutExerciseViewModel
+    {
+        public Guid ExerciseId { get; set; }
+        public ExerciseGroup Group { get; set; }
+        public string Name { get; set; }
+        public int Sets { get; set; }
+        public int Reps { get; set; }
+        public int Down { get; set; }
+        public int Bottom { get; set; }
+        public int Up { get; set; }
+        public int Top { get; set; }
     }
 }

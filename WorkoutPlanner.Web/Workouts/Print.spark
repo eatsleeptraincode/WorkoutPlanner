@@ -4,37 +4,46 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <title>McDole's Performance System</title>
         <meta charset="utf-8"   />
-        <Asset src="twitterbootstrap"/>
+        <Asset src="twitter/bootstrap.min.css"/>
         <Asset src="jqueryuicss"/>
+        <Asset src="workout"/>
         <Styles />
     </head>
     <body data-spy="scroll" data-target=".bs-docs-sidebar">
+        <div class="container">
+            <h1>McDole's Performance System</h1>
 
+            <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
 
-        <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Exercise</th>
-                    <th>Sets</th>
-                    <th>Reps</th>
-                    <th>Tempo</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr each="var e in Model.Workout.Exercises">
-                    <td>${e.Group}</td>
-                    <td>${e.Name}</td>
-                    <td>${e.Sets}</td>
-                    <td>${e.Reps}</td>
-                    <td>${e.Down}/${e.Bottom}/${e.Up}/${e.Top}</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+            <for each="var e in Model.Workout.Exercises">
+                <div class="row">
+                    <div class="span2">
+                        <h3>${e.Name}</h3>
+                        (${e.Down}/${e.Bottom}/${e.Up}/${e.Top})
+                    </div>
+                    <div class="span4">
+                        <table class="table-printed">
+                            <tbody>
+                            <tr>
+                                <var counter1="new int[e.Sets]" />
+                                <for each="var i1 in counter1">
+                                    <td></td>
+                                </for>
+                            </tr>
+                            <tr>
+                                <var counter2="new int[e.Sets]" />
+                                <for each="var i2 in counter2">
+                                    <td></td>
+                                </for>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>                
+            </for>
+        </div>
     </body>
 </html>

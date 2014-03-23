@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
     <head>
+        <title>McDole's Performance System</title>
         <meta charset="utf-8"   />
         <Asset src="twitterbootstrap"/>
         <Asset src="jqueryuicss"/>

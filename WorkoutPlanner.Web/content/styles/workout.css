@@ -3,3 +3,12 @@
     width: 800px; 
     height: 300px;
 }
+
+.table-printed {
+    margin: 2px;
+}
+.table-printed td {
+    border: 1px solid black;
+    height: 25px;
+    width: 40px;
+}

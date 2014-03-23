@@ -7,11 +7,11 @@
 
 <content:main>
 
-    <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
-    ${this.LinkTo(new PrintWorkoutViewModel{WorkoutId = Model.Workout.Id}).Text("Print")}
+    <h2>${Model.Type + " " + Model.Phase}</h2>
+    ${this.LinkTo(new PrintWorkoutViewModel{WorkoutId = Model.WorkoutId}).Text("Print")}
     
     <Form model="WorkoutPlanner.Web.Workouts.AddExerciseViewModel">
-        <Input name="WorkoutId"/>
+    <Input name="WorkoutId"/>
     <table class="table">
         <thead>
             <tr>
@@ -20,49 +20,38 @@
                 <th>Sets</th>
                 <th>Reps</th>
                 <th>Tempo</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr each="var e in Model.Workout.Exercises">
-                <td>${e.Group}</td>
-                <td>${e.Name}</td>
-                <td>${e.Sets}</td>
-                <td>${e.Reps}</td>
-                <td>${e.Down}/${e.Bottom}/${e.Up}/${e.Top}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    ${this.InputFor(x => x.Group).AddClass("input-mini")}
+
+            <var itemIndex="0"/>
+            <tr each="var e in Model.Exercises">
+                <td> 
+                    ${this.InputFor(x => x.Exercises[itemIndex].Group).AddClass("input-mini")}
                 </td>
+                <td>${this.InputFor(x => x.Exercises[itemIndex].ExerciseId)}
+                ${this.InputFor(x => x.Exercises[itemIndex].Exercise)}</td>
+                <td>${this.InputFor(x => x.Exercises[itemIndex].Sets)}</td>
+                <td>${this.InputFor(x => x.Exercises[itemIndex].Reps)}</td>
                 <td>
-                    <Input name="Exercise"/>
+                    ${this.InputFor(x => x.Exercises[itemIndex].Down).AddClass("input-mini")}/
+                    ${this.InputFor(x => x.Exercises[itemIndex].Bottom).AddClass("input-mini")}/
+                    ${this.InputFor(x => x.Exercises[itemIndex].Up).AddClass("input-mini")}/
+                    ${this.InputFor(x => x.Exercises[itemIndex].Top).AddClass("input-mini")}
                 </td>
-                <td>
-                    <Input name="Sets"/>
-                </td>
-                <td>
-                    <Input name="Reps"/>
-                </td>
-                <td>
-                    ${this.InputFor(x => x.Down).AddClass("input-mini")}/${this.InputFor(x => x.Bottom).AddClass("input-mini")}/${this.InputFor(x => x.Up).AddClass("input-mini")}/${this.InputFor(x => x.Top).AddClass("input-mini")}
-                </td>
-                <td>
-                    <input type="submit" value="Add"></input>
-                </td>
+                <set itemIndex="itemIndex+1"/>
             </tr>
         </tbody>
     </table>
-    </Form>
-
-
-
-    <div ng-controller="MyCtrl">
-        <div class="gridStyle" ng-grid="gridOptions"></div>
-    </div>
+    <input type="submit" class="btn btn-inverse" value="Save"/>
+</Form>
 </content:main>
 
 <content:footer>
-
+<script language="javascript">
+    $('.autocomplete').bind("autocompleteChanged", function(target, value){
+    var s = "[name='" + target.currentTarget.id.substring(0,20) + "Id']";
+    $(s).val(value);
+    });
+  </script>
 </content:footer>
