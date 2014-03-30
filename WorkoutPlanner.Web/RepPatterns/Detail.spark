@@ -1,0 +1,29 @@
+<viewdata model="WorkoutPlanner.Web.RepPatterns.DetailRepPatternViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <h3>Rep Pattern</h3>
+    <Form model="WorkoutPlanner.Web.RepPatterns.DetailRepPatternViewModel">
+        <Input name="RepPatternId"/>
+
+        <var itemIndex="0"/>
+
+        <for each="var e in Model.Pattern.Pattern">
+            ${this.InputFor(x => x.Pattern.Pattern[itemIndex].Amount).AddClass("input-mini")},
+            <set itemIndex="itemIndex+1"/>
+        </for>
+
+        <input type="text" value="" name="PatternPattern[${itemIndex}]Amount" data-localized-label="Amount" class="number input-mini"/>
+
+        <input type="submit" value="Save" class="btn btn-inverse"/>
+    </Form>
+
+</content:main>
+
+<content:footer>
+
+</content:footer>

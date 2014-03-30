@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FubuCore;
 using FubuMVC.Core.UI.Elements;
 using HtmlTags;
 
@@ -21,7 +22,7 @@ namespace WorkoutPlanner.Web.Html
             var tag = new SelectTag(
                 t =>
                 {
-                    values.Each(v => t.Option(v.ToString(), v));
+                    values.Each(v => t.Option(v.ToString().SplitCamelCase(), v));
                     t.SelectByValue((request.RawValue ?? _defaultValue).ToString());
                 });
             return tag;

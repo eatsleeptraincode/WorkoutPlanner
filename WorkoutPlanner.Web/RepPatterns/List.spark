@@ -7,11 +7,13 @@
 <content:main>
 
     <h3>Rep Patterns</h3>
+    ${this.LinkTo(new WorkoutPlanner.Web.RepPatterns.DetailRepPatternViewModel()).Text("New")}
     <ul>
-        <li>2,3,4,5</li>
-        <li>5,3,1</li>
+        <li each="var p in Model.Patterns">
+            ${this.LinkTo(new WorkoutPlanner.Web.RepPatterns.DetailRepPatternViewModel{RepPatternId = p.Key}).Text(p.Value)}
+        </li>
     </ul>
-    
+
 </content:main>
 
 <content:footer>

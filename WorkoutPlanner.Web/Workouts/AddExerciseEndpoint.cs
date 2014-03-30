@@ -25,6 +25,8 @@ namespace WorkoutPlanner.Web.Workouts
                 ExerciseId = e.ExerciseId,
                 Group = e.Group,
                 Reps = e.Reps,
+                RepScheme = e.RepScheme,
+                RepPatternId = e.RepPatternId,
                 Sets = e.Sets,
                 Top = e.Top,
                 Up = e.Up
@@ -50,5 +52,7 @@ namespace WorkoutPlanner.Web.Workouts
         public int Bottom { get; set; }
         public int Up { get; set; }
         public int Top { get; set; }
+        public RepScheme RepScheme { get; set; }
+        public Guid RepPatternId { get; set; }
     }
 }

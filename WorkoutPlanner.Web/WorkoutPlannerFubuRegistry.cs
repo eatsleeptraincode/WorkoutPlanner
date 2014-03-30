@@ -15,6 +15,7 @@ namespace WorkoutPlanner.Web
             Services(s =>
             {
                 s.AddService<IActivator, DefaultUser>();
+                s.AddService<IActivator, DefaultRepPatterns>();
                 s.AddService<IDocumentStoreConfigurationAction, ConnectionStringConfigurationAction>();
             });
 		}

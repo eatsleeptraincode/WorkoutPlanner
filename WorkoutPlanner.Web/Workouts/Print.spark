@@ -15,25 +15,34 @@
         <div class="container">
             <h1>McDole's Performance System</h1>
 
-            <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
+            <div class="row">
+                <div class="span4">
+                    <h2>${Model.Workout.AthleteName}</h2>
+                </div>
+
+                <div class="span4">
+                    <h2>${Model.Workout.Type + " " + Model.Workout.Phase}</h2>
+                </div>
+            </div>
 
             <for each="var e in Model.Workout.Exercises">
                 <div class="row">
                     <div class="span2">
                         <h3>${e.Name}</h3>
-                        (${e.Down}/${e.Bottom}/${e.Up}/${e.Top})
+                        <p>${e.RepDisplay}</p>
+                        <p>${e.Tempo}</p>
                     </div>
                     <div class="span4">
                         <table class="table-printed">
                             <tbody>
                             <tr>
-                                <var counter1="new int[e.Sets]" />
+                                <var counter1="new int[e.RepCount]" />
                                 <for each="var i1 in counter1">
                                     <td></td>
                                 </for>
                             </tr>
                             <tr>
-                                <var counter2="new int[e.Sets]" />
+                                <var counter2="new int[e.RepCount]" />
                                 <for each="var i2 in counter2">
                                     <td></td>
                                 </for>

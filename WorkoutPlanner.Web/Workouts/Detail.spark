@@ -17,7 +17,7 @@
             <tr>
                 <th></th>
                 <th>Exercise</th>
-                <th>Sets</th>
+                <th>Rep Scheme</th>
                 <th>Reps</th>
                 <th>Tempo</th>
             </tr>
@@ -26,13 +26,23 @@
 
             <var itemIndex="0"/>
             <tr each="var e in Model.Exercises">
-                <td> 
+                <td>
                     ${this.InputFor(x => x.Exercises[itemIndex].Group).AddClass("input-mini")}
                 </td>
-                <td>${this.InputFor(x => x.Exercises[itemIndex].ExerciseId)}
-                ${this.InputFor(x => x.Exercises[itemIndex].Exercise)}</td>
-                <td>${this.InputFor(x => x.Exercises[itemIndex].Sets)}</td>
-                <td>${this.InputFor(x => x.Exercises[itemIndex].Reps)}</td>
+                <td>
+                    ${this.InputFor(x => x.Exercises[itemIndex].ExerciseId)}
+                    ${this.InputFor(x => x.Exercises[itemIndex].Exercise)}
+                </td>
+                <td>${this.InputFor(x => x.Exercises[itemIndex].RepScheme).AddClass("input-medium").AddClass("RepScheme").Id("RepScheme" + itemIndex)}</td>
+                <td>
+                    <div class='${"RepScheme" + itemIndex + "StraightSets"}'>
+                        ${this.InputFor(x => x.Exercises[itemIndex].Sets).AddClass("input-mini")}
+                        x ${this.InputFor(x => x.Exercises[itemIndex].Reps).AddClass("input-mini")}
+                    </div >
+                    <div class='${"RepScheme" + itemIndex + "RepPattern"}'>
+                        ${this.InputFor(x => x.Exercises[itemIndex].RepPatternId).AddClass("input-medium")}
+                    </div>
+                </td>
                 <td>
                     ${this.InputFor(x => x.Exercises[itemIndex].Down).AddClass("input-mini")}/
                     ${this.InputFor(x => x.Exercises[itemIndex].Bottom).AddClass("input-mini")}/
@@ -48,10 +58,43 @@
 </content:main>
 
 <content:footer>
-<script language="javascript">
-    $('.autocomplete').bind("autocompleteChanged", function(target, value){
-    var s = "[name='" + target.currentTarget.id.substring(0,20) + "Id']";
-    $(s).val(value);
-    });
-  </script>
+    <script language="javascript">
+        $('.autocomplete').bind("autocompleteChanged", function(target, value){
+        var s = "[name='" + target.currentTarget.id.substring(0,20) + "Id']";
+        $(s).val(value);
+        });
+
+
+        function displayCorrectRepSchemeSelector(dropDown){
+            var id = dropDown.attr('id');
+            var selectedValue = dropDown.find(":selected").val();
+            var straightSets = $('.' + id + 'StraightSets');
+            var repPattern = $('.' + id + 'RepPattern');
+
+            if(selectedValue === "StraightSets"){
+                straightSets.show();
+                repPattern.hide();
+            }
+            else{
+                straightSets.hide();
+                repPattern.show();
+            }
+        };
+
+
+        $('.RepScheme').change(function(){
+            var dropDown = $(this);
+            displayCorrectRepSchemeSelector(dropDown);
+        });
+
+
+        $(document).ready(function(){
+            var dropDowns = $('.RepScheme').each(function(i){
+                var dropDown = $(this);
+                displayCorrectRepSchemeSelector(dropDown);
+            });
+        });
+
+    </script>
+    
 </content:footer>

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FubuMVC.AutoComplete;
 using FubuPersistence;
-using WorkoutPlanner.Web.Exercises;
 
 namespace WorkoutPlanner.Web.Workouts
 {
@@ -26,10 +24,18 @@ namespace WorkoutPlanner.Web.Workouts
         public string Name { get; set; }
         public int Sets { get; set; }
         public int Reps { get; set; }
+        public RepScheme RepScheme { get; set; }
+        public Guid RepPatternId { get; set; }
         public int Down { get; set; }
         public int Bottom { get; set; }
         public int Up { get; set; }
         public int Top { get; set; }
+    }
+
+    public enum RepScheme
+    {
+        StraightSets,
+        RepPattern
     }
 
     public enum ExerciseGroup
