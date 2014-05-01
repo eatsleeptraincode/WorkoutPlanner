@@ -10,7 +10,7 @@
         <Edit name="UserName"/>
         <Edit name="Password"/>
         <Edit name="RememberMe"/>
-        <input type="submit" text="Login"/>
+        <input type="submit" value="Login" class="btn btn-inverse"/>
     </Form>
     
 </content:main>

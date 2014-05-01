@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="InMemoryPersistenceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Athletes\AthleteTests.cs" />
     <Compile Include="Web\Athletes\CreateAthleteEndpointTests.cs" />
     <Compile Include="Web\Athletes\DetailAthleteEndpointTests.cs" />
     <Compile Include="Web\Workouts\CreateWorkoutEndpointTests.cs" />

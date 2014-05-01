@@ -15,6 +15,17 @@ namespace WorkoutPlanner.Web.Athletes
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
 
+        public int Age
+        {
+            get
+            {
+                DateTime today = CurrentDate.Today();
+                int age = today.Year - BirthDate.Year;
+                if (BirthDate > today.AddYears(-age)) age--;
+                return age;
+            }
+        }
+
         public Athlete()
         {
             Workouts = new List<Workout>();

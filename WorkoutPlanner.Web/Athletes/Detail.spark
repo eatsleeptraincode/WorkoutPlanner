@@ -6,7 +6,23 @@
 
 <content:main>
     <h2>${Model.Athlete.FirstName + " " + Model.Athlete.LastName}</h2>
-    
+
+    <dl>
+        <dt>Gender</dt>
+        <dd><Display name="Athlete.Gender" /></dd>
+        <dt>Age</dt>
+        <dd>
+            <Display name="Athlete.Age" />
+        </dd>
+        <dt>Email</dt>
+        <dd>
+            <Display name="Athlete.Email" />
+        </dd>
+        <dt>Phone Number</dt>
+        <dd>
+            <Display name="Athlete.PhoneNumber" />
+        </dd>
+    </dl>
     ${this.LinkTo(new WorkoutPlanner.Web.Workouts.CreateWorkoutViewModel{AthleteId = Model.Athlete.Id}).Text("New Workout")}
     
     <ul>

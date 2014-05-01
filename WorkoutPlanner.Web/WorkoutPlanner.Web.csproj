@@ -179,6 +179,7 @@
   <ItemGroup>
     <Compile Include="Athletes\Athlete.cs" />
     <Compile Include="Athletes\CreateAthleteEndpoint.cs" />
+    <Compile Include="Athletes\CurrentDate.cs" />
     <Compile Include="Athletes\DetailAthleteEndpoint.cs" />
     <Compile Include="Athletes\Gender.cs" />
     <Compile Include="Athletes\ListAthleteEndpoint.cs" />
