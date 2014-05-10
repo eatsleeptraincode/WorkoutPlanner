@@ -7,14 +7,19 @@
 <content:main>
 
     <h3>Workouts</h3>
+    <Link model="WorkoutPlanner.Web.Templates.CreateTemplateViewModel" text="Create Template"/>
     <ul>
-        <li>Hockey Accumulation 1</li>
-        <li>Hockey Accumulation 2</li>
+        <li each="var t in Model.Templates">
+            ${this.LinkTo(new WorkoutPlanner.Web.Templates.EditTemplateViewModel{TemplateId = t.Id}).Text(t.Type + " " + t.Phase)}
+        </li>
     </ul>
     <h3>Cycles</h3>
+    <Link model="WorkoutPlanner.Web.Templates.CreateMacroViewModel" text="Create Cycle"/>
     <ul>
-        <li>Hockey Accumulation</li>
-        <li>StrongMan Intro</li>
+        <li each="var m in Model.Macros">
+            ${this.LinkTo(new WorkoutPlanner.Web.Templates.EditMacroViewModel{MacroId = m.Id}).Text(m.Type)}
+        </li>
+
     </ul>
     
 </content:main>

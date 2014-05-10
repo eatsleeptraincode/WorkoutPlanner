@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
     <head>
         <title>McDole's Performance System</title>
         <meta charset="utf-8"   />
         <Asset src="twitterbootstrap"/>
         <Asset src="jqueryuicss"/>
-        <Asset src="angulargrid"/>
         <use content="head" />
         <Styles />
     </head>

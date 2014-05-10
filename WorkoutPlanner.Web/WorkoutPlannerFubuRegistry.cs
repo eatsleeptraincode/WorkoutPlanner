@@ -1,6 +1,7 @@
 using Bottles;
 using FubuMVC.Core;
 using FubuMVC.PersistedMembership;
+using FubuMVC.Validation;
 using FubuPersistence.RavenDb;
 using WorkoutPlanner.Web.Html;
 
@@ -15,9 +16,18 @@ namespace WorkoutPlanner.Web
             Services(s =>
             {
                 s.AddService<IActivator, DefaultUser>();
-                s.AddService<IActivator, DefaultRepPatterns>();
                 s.AddService<IDocumentStoreConfigurationAction, ConnectionStringConfigurationAction>();
             });
+
+//            Import<ValidationSettings>()
+//            this.Validation(v =>
+//            {
+//                v.Actions
+//                    .Include(a => a.HasInput && a.InputType().Name.EndsWith("ViewModel"));
+//                v.Failures
+//                    .If(a => a.InputType() != null && a.InputType().Name.EndsWith("ViewModel"))
+//                    .TransferBy<ViewModelDescriptor>();
+//            });
 		}
 	}
 }

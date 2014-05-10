@@ -167,16 +167,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\scripts\angular.min.js" />
-    <Content Include="content\scripts\ng-grid-2.0.7.debug.js" />
-    <Content Include="content\scripts\workout.js" />
-    <Content Include="content\styles\ng-grid.css" />
     <Content Include="content\styles\workout.css" />
     <Content Include="Global.asax" />
     <Content Include="Shared\bindings.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounts\ChangePasswordEndpoint.cs" />
     <Compile Include="Athletes\Athlete.cs" />
     <Compile Include="Athletes\CreateAthleteEndpoint.cs" />
     <Compile Include="Athletes\CurrentDate.cs" />
@@ -196,9 +193,16 @@
     <Compile Include="HomeModel.cs" />
     <Compile Include="Html\ConfigureHtmlConventions.cs" />
     <Compile Include="Html\EnumBuilder.cs" />
+    <Compile Include="ModelRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepPatterns\DetailRepPatternEndpoint.cs" />
     <Compile Include="RepPatterns\ListRepPatternEndpoint.cs" />
+    <Compile Include="RuleSource.cs" />
+    <Compile Include="Templates\AddExerciseToTemplateEndpoint.cs" />
+    <Compile Include="Templates\CreateMacroEndpoint.cs" />
+    <Compile Include="Templates\CreateTemplateEndpoint.cs" />
+    <Compile Include="Templates\EditMacroEndpoint.cs" />
+    <Compile Include="Templates\EditTemplateEndpoint.cs" />
     <Compile Include="Templates\ListTemplateEndpoint.cs" />
     <Compile Include="WorkoutPlannerApplication.cs" />
     <Compile Include="WorkoutPlannerFubuRegistry.cs" />
@@ -212,7 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Accounts\Login.spark" />
+    <Content Include="Accounts\Login.spark">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Athletes\Create.spark">
       <SubType>Designer</SubType>
     </Content>
@@ -230,10 +236,19 @@
     <Content Include="Athletes\Detail.spark">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Templates\List.spark" />
+    <Content Include="Templates\List.spark">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="main.asset.config" />
     <Content Include="RepPatterns\List.spark" />
     <Content Include="RepPatterns\Detail.spark" />
+    <Content Include="Templates\CreateMacro.spark" />
+    <Content Include="Accounts\ChangePassword.spark">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\CreateTemplate.spark" />
+    <Content Include="Templates\EditMacro.spark" />
+    <Content Include="Templates\EditTemplate.spark" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -250,7 +265,9 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="content\scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

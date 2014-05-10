@@ -1,0 +1,17 @@
+<viewdata model="WorkoutPlanner.Web.Templates.CreateMacroViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    <Form model="WorkoutPlanner.Web.Templates.CreateMacroViewModel">
+        <Edit name="Type"/>
+        <input type="submit" value="Save" class="btn btn-inverse"/>
+    </Form>    
+</content:main>
+
+<content:footer>
+
+</content:footer>

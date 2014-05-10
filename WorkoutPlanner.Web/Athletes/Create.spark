@@ -13,7 +13,7 @@
         <Edit name="PhoneNumber"/>
         <Edit name="Email"/>
         <Edit name="BirthDate"/>
-        <input type="submit" text="Create"/>
+        <input type="submit" value="Create" class="btn btn-inverse"/>
     </Form>
     
 </content:main>

@@ -1,0 +1,14 @@
+<viewdata model="WorkoutPlanner.Web.Templates.EditMacroViewModel" />
+
+<content:header>
+
+</content:header>
+
+<content:main>
+
+    Edit
+</content:main>
+
+<content:footer>
+
+</content:footer>

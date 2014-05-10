@@ -1,4 +1,4 @@
-<viewdata model="WorkoutPlanner.Web.Workouts.CreateWorkoutViewModel" />
+<viewdata model="WorkoutPlanner.Web.Templates.CreateTemplateViewModel" />
 
 <content:header>
 
@@ -6,13 +6,11 @@
 
 <content:main>
 
-    <Form model="WorkoutPlanner.Web.Workouts.CreateWorkoutViewModel">
-        <Input name="AthleteId"/>
+    <Form model="WorkoutPlanner.Web.Templates.CreateTemplateViewModel">
         <Edit name="Type"/>
         <Edit name="Phase"/>
         <input type="submit" value="Save" class="btn btn-inverse"/>
-    </Form>
-    
+    </Form>    
 </content:main>
 
 <content:footer>
