@@ -1,7 +1,6 @@
 using FubuPersistence.RavenDb;
 using Raven.Client;
 using Raven.Client.Document;
-using Raven.Client.Indexes;
 
 namespace WorkoutPlanner.Web
 {

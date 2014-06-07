@@ -24,7 +24,6 @@ namespace WorkoutPlanner.Web.Athletes
         {
             _repository.Update(new Athlete
             {
-                Id = Guid.NewGuid(),
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 PhoneNumber = request.PhoneNumber,
@@ -53,9 +52,8 @@ namespace WorkoutPlanner.Web.Athletes
             Property(m => m.FirstName).Required();
             Property(m => m.LastName).Required();
             Property(m => m.Gender).Required();
-//            Property(m => m.PhoneNumber).Required();
-//            Property(m => m.Email).Required();
             Property(m => m.BirthDate).Required();
+            Property(m => m.Email).Email();
         }
     }
 }

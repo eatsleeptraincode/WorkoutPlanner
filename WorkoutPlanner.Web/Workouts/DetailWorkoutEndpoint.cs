@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FubuMVC.AutoComplete;
-using FubuPersistence;
+using Raven.Client;
 using WorkoutPlanner.Web.Exercises;
 using WorkoutPlanner.Web.Html;
 
@@ -10,17 +10,19 @@ namespace WorkoutPlanner.Web.Workouts
 {
     public class DetailWorkoutEndpoint
     {
-        private readonly IEntityRepository _repository;
+        private readonly IDocumentSession _session;
 
-        public DetailWorkoutEndpoint(IEntityRepository repository)
+        public DetailWorkoutEndpoint(IDocumentSession session)
         {
-            _repository = repository;
+            _session = session;
         }
 
         public DetailWorkoutViewModel get_workout_detail_WorkoutId(DetailWorkoutViewModel request)
         {
-            var workout = _repository.Find<Workout>(request.WorkoutId);
-            //TODO: Make less horrible
+            var workout = _session
+                .Include<Workout>(w => w.Exercises.Select(e => e.ExerciseId))
+                .Load(request.WorkoutId);
+            
             var exercises = workout.Exercises.Select(e => new WorkoutExerciseViewModel
             {
                 Bottom = e.Bottom,
@@ -32,12 +34,19 @@ namespace WorkoutPlanner.Web.Workouts
                 Sets = e.Sets,
                 Top = e.Top,
                 Up = e.Up,
-                Exercise = _repository.Find<Exercise>(e.ExerciseId).Name,
+                Exercise = _session.Load<Exercise>(e.ExerciseId).Name,
                 ExerciseId = e.ExerciseId
             }).ToList();
 
             exercises.Add(new WorkoutExerciseViewModel());
-            return new DetailWorkoutViewModel {Phase = workout.Phase, Type = workout.Type,Exercises = exercises, WorkoutId = workout.Id};
+            
+            return new DetailWorkoutViewModel
+            {
+                Phase = workout.Phase,
+                Type = workout.Type,
+                Exercises = exercises,
+                WorkoutId = workout.Id
+            };
         }
     }
 

@@ -22,10 +22,10 @@ namespace WorkoutPlanner.Web
         {
             _transaction.WithRepository(r =>
             {
-                var user = r.FindWhere<User>(u => u.UserName == "chris");
+                var user = r.FindWhere<User>(u => u.UserName == "mcdole");
                 if (user == null)
                 {
-                    user = new User { UserName = "chris", Password = _hash.CreateHash("password") };
+                    user = new User { UserName = "mcdole", Password = _hash.CreateHash("password") };
                     r.Update(user);
                 }
             });

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Web.UI;
 using FubuCore.Reflection;
+using FubuMVC.Validation;
 using FubuValidation;
+using WorkoutPlanner.Web.Workouts;
 
 namespace WorkoutPlanner.Web
 {
+
     public abstract class ModelRule<T> : IValidationRule where T : class
     {
         private ValidationContext ctx;

@@ -6,7 +6,22 @@
 
 <content:main>
 
-    Edit
+    <h2>Edit ${Model.CycleName} Cycle</h2>
+    <Form model="WorkoutPlanner.Web.Templates.EditMacroViewModel">
+
+        <Input name="MacroId"/>
+        <var itemIndex="0"/>
+        <ul>
+            <li each="var t in Model.WorkoutTemplateIds">
+
+                ${this.InputFor(x => x.WorkoutTemplateIds[itemIndex].Id)}
+
+                <set itemIndex="itemIndex+1"/>
+            </li>
+        </ul>
+        <input type="submit" class="btn btn-inverse" value="Save"/>
+
+    </Form>
 </content:main>
 
 <content:footer>

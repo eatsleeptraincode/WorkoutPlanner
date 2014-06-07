@@ -17,7 +17,7 @@ namespace WorkoutPlanner.Web.RepPatterns
 
         public ListRepPatternViewModel get_reppatterns_list(ListRepPatternViewModel request)
         {
-            var patterns = _repository.All<RepPatternCollection>().First();
+            var patterns = _repository.Find<RepPatternCollection>(RepPatternCollection.StaticId);
 
             var list = patterns.Patterns.Select(pattern => new KeyValuePair<Guid, string>(pattern.Id, pattern.Pattern
                 .Select(p => p.Amount.ToString(CultureInfo.InvariantCulture))
@@ -34,6 +34,7 @@ namespace WorkoutPlanner.Web.RepPatterns
 
     public class RepPatternCollection : Entity
     {
+        public static readonly Guid StaticId = new Guid("10476d09-c226-4d2a-9e5b-5da3b38b8f3a");
         public IList<RepPattern> Patterns { get; set; }
     }
 

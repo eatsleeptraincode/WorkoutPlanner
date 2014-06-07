@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FubuMVC.Core.Continuations;
 using FubuPersistence;
 
@@ -20,8 +21,7 @@ namespace WorkoutPlanner.Web.Templates
 
         public FubuContinuation post_macro_create(CreateMacroViewModel request)
         {
-            _repository.Update(new Macro{Id = Guid.NewGuid(), Type = request.Type});
-
+            _repository.Update(new Macro {Type = request.Type});
             return FubuContinuation.RedirectTo(new ListTemplateViewModel());
         }
     }
@@ -29,6 +29,12 @@ namespace WorkoutPlanner.Web.Templates
     public class Macro : Entity
     {
         public string Type { get; set; }
+        public IList<Guid> WorkoutTemplateIds { get; set; }
+
+        public Macro()
+        {
+            WorkoutTemplateIds = new List<Guid>();
+        }
     }
 
     public class CreateMacroViewModel

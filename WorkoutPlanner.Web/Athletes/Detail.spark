@@ -24,6 +24,7 @@
         </dd>
     </dl>
     ${this.LinkTo(new WorkoutPlanner.Web.Workouts.CreateWorkoutViewModel{AthleteId = Model.Athlete.Id}).Text("New Workout")}
+    ${this.LinkTo(new WorkoutPlanner.Web.Workouts.CreateWorkoutFromTemplateViewModel{AthleteId = Model.Athlete.Id}).Text("New Workout From Template")}
     
     <ul>
         <li each="var w in Model.Workouts">
@@ -33,5 +34,5 @@
 </content:main>
 
 <content:footer>
-
+    
 </content:footer>

@@ -16,23 +16,15 @@ namespace WorkoutPlanner.Web.RepPatterns
 
         public DetailRepPatternViewModel get_reppattern_detail_RepPatternId(DetailRepPatternViewModel request)
         {
-            var repPattern = _repository.All<RepPatternCollection>().First().Patterns.SingleOrDefault(p => p.Id == request.RepPatternId);
-            if (repPattern == null)
-            {
-                request.RepPatternId = Guid.NewGuid();
-                request.Pattern = new RepPattern{ Pattern = new Rep[0]};
-            }
-            else
-            {
-                request.Pattern = repPattern;
-            }
+            var repPattern = _repository.Find<RepPatternCollection>(RepPatternCollection.StaticId)
+                .Patterns.SingleOrDefault(p => p.Id == request.RepPatternId);
+            request.Pattern = repPattern ?? new RepPattern{ Pattern = new Rep[0]};
             return request;
         }
 
         public FubuContinuation post_reppattern_detail(DetailRepPatternViewModel request)
         {
-            var patternCollection = _repository.All<RepPatternCollection>()
-                .First();
+            var patternCollection = _repository.Find<RepPatternCollection>(RepPatternCollection.StaticId);
             var pattern =
                 patternCollection
                     .Patterns.SingleOrDefault(p => p.Id == request.RepPatternId);

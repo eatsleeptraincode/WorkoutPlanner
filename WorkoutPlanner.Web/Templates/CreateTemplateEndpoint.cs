@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FubuMVC.Core.Continuations;
-using FubuMVC.Spark.SparkModel;
 using FubuPersistence;
 using WorkoutPlanner.Web.Workouts;
 
@@ -33,7 +31,6 @@ namespace WorkoutPlanner.Web.Templates
         public string Type { get; set; }
         public int Phase { get; set; }
 
-        public Guid AthleteId { get; set; }
         public IList<WorkoutExercise> Exercises { get; set; }
 
         public WorkoutTemplate()

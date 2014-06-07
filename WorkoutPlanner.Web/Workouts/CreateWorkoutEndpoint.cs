@@ -23,7 +23,6 @@ namespace WorkoutPlanner.Web.Workouts
         {
             _repository.Update(new Workout
             {
-                Id = Guid.NewGuid(),
                 AthleteId = request.AthleteId,
                 Type = request.Type,
                 Phase = request.Phase
@@ -38,4 +37,6 @@ namespace WorkoutPlanner.Web.Workouts
         public string Type { get; set; }
         public int Phase { get; set; }
     }
+
+
 }

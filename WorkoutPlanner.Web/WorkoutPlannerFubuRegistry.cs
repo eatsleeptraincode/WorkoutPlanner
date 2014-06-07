@@ -19,6 +19,8 @@ namespace WorkoutPlanner.Web
                 s.AddService<IDocumentStoreConfigurationAction, ConnectionStringConfigurationAction>();
             });
 
+            //TODO: figure out applying validation rules
+
 //            Import<ValidationSettings>()
 //            this.Validation(v =>
 //            {
